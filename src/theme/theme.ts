@@ -32,7 +32,11 @@ export const theme = createTheme({
 
     buttonPrimary: palette.carrotSecondary,
 
-    background: palette.darkerOcean,
+    backgroundLightOcean: palette.lightOcean,
+    backgroundOcean: palette.ocean,
+    backgroundGreenOcean: palette.greenOcean,
+    backgroundDarkOcean: palette.darkOcean,
+    backgroundDarkerOcean: palette.darkerOcean,
 
     error: palette.redError,
     errorLight: palette.redErrorLight,
