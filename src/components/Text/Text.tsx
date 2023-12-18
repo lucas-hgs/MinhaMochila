@@ -1,15 +1,37 @@
+import {createText} from '@shopify/restyle';
 import React from 'react';
-import {
-  Text as RNText,
-  TextProps as RNTextProps,
-  TextStyle,
-} from 'react-native';
+import {TextStyle} from 'react-native';
+import {Theme} from '../../theme/theme';
 
-interface TextProps extends RNTextProps {
+const SRText = createText<Theme>();
+type SRTextProps = React.ComponentProps<typeof SRText>;
+
+interface TextProps extends SRTextProps {
   preset?: TextVariants;
   bold?: boolean;
   italic?: boolean;
   semiBold?: boolean;
+}
+
+export function Text({
+  children,
+  preset = 'paragraphMedium',
+  bold,
+  semiBold,
+  italic,
+  style,
+  ...sRTextProps
+}: TextProps) {
+  const fontFamily = getFontFamily(preset, bold, italic, semiBold);
+
+  return (
+    <SRText
+      color="grayBlack"
+      style={[$fontSizes[preset], {fontFamily}, style]}
+      {...sRTextProps}>
+      {children}
+    </SRText>
+  );
 }
 
 function getFontFamily(
@@ -42,24 +64,6 @@ function getFontFamily(
   }
 }
 
-export function Text({
-  children,
-  preset = 'paragraphMedium',
-  bold,
-  semiBold,
-  italic,
-  style,
-  ...rest
-}: TextProps) {
-  const fontFamily = getFontFamily(preset, bold, italic, semiBold);
-
-  return (
-    <RNText style={[$fontSizes[preset], {fontFamily}, style]} {...rest}>
-      {children}
-    </RNText>
-  );
-}
-
 type TextVariants =
   | 'headingLarge'
   | 'headingMedium'
@@ -70,7 +74,7 @@ type TextVariants =
   | 'paragraphCaption'
   | 'paragraphCaptionSmall';
 
-const $fontSizes: Record<TextVariants, TextStyle> = {
+export const $fontSizes: Record<TextVariants, TextStyle> = {
   headingLarge: {fontSize: 32, lineHeight: 38.4},
   headingMedium: {fontSize: 22, lineHeight: 26.4},
   headingSmall: {fontSize: 18, lineHeight: 23.4},
@@ -83,7 +87,7 @@ const $fontSizes: Record<TextVariants, TextStyle> = {
   paragraphCaptionSmall: {fontSize: 10, lineHeight: 14},
 };
 
-const $fontFamily = {
+export const $fontFamily = {
   black: 'Roboto-Black',
   blackItalic: 'Roboto-BlackItalic',
   bold: 'Roboto-Bold',

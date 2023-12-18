@@ -1,18 +1,18 @@
 import {createTheme} from '@shopify/restyle';
 
 const palette = {
-  lightOcean: '#0FC2C0',
-  ocean: '#0CABA8',
-  greenOcean: '#008F8C',
-  darkOcean: '#015958',
-  darkerOcean: '#023535',
-
-  carrotSecondary: '#F86F2D',
-  carrotSecondaryLight: '#FAE6DD',
+  cream: '#FAF0D7',
+  blue: '#6C75FF',
+  lightBlue: '#8CC0DE',
+  green: '#CCEEBC',
+  lightPurple: '#BEAFF8',
+  purple: '#7C6FAF',
+  darkPurple: '#473B76',
 
   greenSuccess: '#4ABC86',
   greenSuccessLight: '#D8FFEC',
 
+  redStrongError: '#FF0404',
   redError: '#EA3838',
   redErrorLight: '#FBECEC',
 
@@ -30,16 +30,14 @@ export const theme = createTheme({
     ...palette,
     primary: palette.grayWhite,
 
-    buttonPrimary: palette.carrotSecondary,
+    buttonPrimary: palette.lightPurple,
 
-    backgroundLightOcean: palette.lightOcean,
-    backgroundOcean: palette.ocean,
-    backgroundGreenOcean: palette.greenOcean,
-    backgroundDarkOcean: palette.darkOcean,
-    backgroundDarkerOcean: palette.darkerOcean,
+    backgroundPrimary: '#D8CFFB',
+    backgroundSecondary: '#FAF0D7',
 
     error: palette.redError,
     errorLight: palette.redErrorLight,
+    errorStrong: palette.redStrongError,
 
     success: palette.greenSuccess,
     successLight: palette.greenSuccessLight,
