@@ -2,6 +2,7 @@ import {createTheme} from '@shopify/restyle';
 
 const palette = {
   cream: '#FAF0D7',
+  lightPink: '#FFD2F0',
   blue: '#6C75FF',
   lightBlue: '#8CC0DE',
   green: '#CCEEBC',
