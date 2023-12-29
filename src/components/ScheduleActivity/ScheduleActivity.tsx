@@ -1,10 +1,15 @@
 import React from 'react';
 import {StyleProp, ViewStyle} from 'react-native';
+import {Activity} from '../../domain/Activities.ts/types';
 import {Box} from '../Box/Box';
 import {Icon} from '../Icon/Icon';
 import {Text} from '../Text/Text';
 
-export function ScheduleActivity() {
+export interface Props {
+  activity: Activity;
+}
+
+export function ScheduleActivity({activity}: Props) {
   return (
     <Box mt="s20" mr="s16" style={$boxStyle}>
       <Box style={{marginTop: -35, overflow: 'visible', alignItems: 'center'}}>
@@ -12,13 +17,13 @@ export function ScheduleActivity() {
       </Box>
       <Box paddingLeft="s10">
         <Text preset="paragraphSmall" color="lightBlue">
-          Prova
+          {activity.title}
         </Text>
         <Text preset="paragraphSmall" color="purple">
-          Matemática
+          {activity.text}
         </Text>
         <Text preset="paragraphSmall" color="lightBlue">
-          06.set.2023
+          {activity.date}
         </Text>
       </Box>
     </Box>
