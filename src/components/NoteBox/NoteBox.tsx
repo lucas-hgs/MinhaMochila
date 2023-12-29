@@ -1,38 +1,57 @@
 import React from 'react';
 import {StyleProp, ViewStyle} from 'react-native';
+import {Note} from '../../domain/Notes/types';
 import {useAppTheme} from '../../hooks/useAppTheme';
-import {ThemeColors} from '../../theme/theme';
 import {Box} from '../Box/Box';
 import {Text} from '../Text/Text';
 
 interface Props {
-  color?: ThemeColors;
+  note: Note;
 }
 
-export function NoteBox({color = 'blue'}: Props) {
+export function NoteBox({note}: Props) {
   const {colors} = useAppTheme();
+  let color: any;
+
+  const randomColors = [1, 2, 3, 4, 5];
+
+  let index = Math.floor(Math.random() * randomColors.length);
+
+  switch (index) {
+    case 0:
+      color = colors.cream;
+      break;
+    case 1:
+      color = colors.greenSuccessLight;
+      break;
+    case 2:
+      color = colors.lightPink;
+      break;
+    case 3:
+      color = colors.lightBlue;
+      break;
+    case 4:
+      color = colors.lightPurple;
+      break;
+  }
 
   const $boxStyle: StyleProp<ViewStyle> = {
     minHeight: 110,
     backgroundColor: '#FFF',
     borderRadius: 16,
     borderBottomLeftRadius: 46,
-    borderColor: colors[color],
+    borderColor: color,
     borderLeftWidth: 8,
     borderBottomWidth: 8,
   };
 
   return (
-    <Box style={$boxStyle} padding="s14" mt="s24">
+    <Box style={$boxStyle} padding="s14" mb="s24">
       <Text bold preset="headingMedium" color="darkPurple">
-        Título
+        {note.title}
       </Text>
       <Text preset="paragraphMedium" color="purple" numberOfLines={3}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed
-        diam ipsum. Maecenas in mauris consectetur, dictum ligula ut, finibus
-        tortor. Nullam malesuada molestie lacus eget luctus. Proin quis
-        fringilla nisi. Nullam velit neque, aliquet ut ultricies malesuada,
-        scelerisque molestie magna.
+        {note.text}
       </Text>
     </Box>
   );

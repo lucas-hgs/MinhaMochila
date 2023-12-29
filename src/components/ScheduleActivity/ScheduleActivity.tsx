@@ -12,7 +12,7 @@ export interface Props {
 export function ScheduleActivity({activity}: Props) {
   return (
     <Box mt="s20" mr="s16" style={$boxStyle}>
-      <Box style={{marginTop: -35, overflow: 'visible', alignItems: 'center'}}>
+      <Box style={{marginTop: -35, alignItems: 'center'}}>
         <Icon name="activity" />
       </Box>
       <Box paddingLeft="s10">
@@ -31,7 +31,7 @@ export function ScheduleActivity({activity}: Props) {
 }
 
 const $boxStyle: StyleProp<ViewStyle> = {
-  height: 130,
+  minHeight: 130,
   width: 130,
   backgroundColor: '#FFF',
   borderRadius: 16,
