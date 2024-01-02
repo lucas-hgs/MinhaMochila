@@ -34,11 +34,7 @@ export function HomeScreen() {
         renderItem={renderActivityItem}
         horizontal
         showsHorizontalScrollIndicator={false}
-        style={{
-          minHeight: 160,
-          marginHorizontal: -24,
-          paddingHorizontal: 8,
-        }}
+        style={$activityList}
       />
 
       <Text preset="headingMedium" bold color="darkPurple" mb="s24" mt="s24">
@@ -60,4 +56,10 @@ export function HomeScreen() {
 
 const $screen: StyleProp<ViewStyle> = {
   flex: 1,
+};
+
+const $activityList: StyleProp<ViewStyle> = {
+  minHeight: 160,
+  marginHorizontal: -24,
+  paddingHorizontal: 8,
 };
