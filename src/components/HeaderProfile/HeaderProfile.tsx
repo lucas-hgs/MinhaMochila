@@ -1,5 +1,11 @@
 import React from 'react';
-import {Dimensions, Image} from 'react-native/';
+import {
+  Dimensions,
+  Image,
+  ImageStyle,
+  StyleProp,
+  ViewStyle,
+} from 'react-native/';
 import {Box} from '../Box/Box';
 import {Text} from '../Text/Text';
 
@@ -10,21 +16,12 @@ export function HeaderProfile() {
       overflow="visible"
       height={200}
       width={Dimensions.get('screen').width}
-      style={{
-        marginTop: -24,
-        marginLeft: -24,
-        marginBottom: -100,
-        borderBottomLeftRadius: 24,
-        borderBottomRightRadius: 24,
-      }}>
+      style={$boxStyle}>
       <Box padding="s24" flexDirection="row" alignItems="center">
         <Image
           borderRadius={16}
           resizeMode="cover"
-          style={{
-            width: 48,
-            height: 48,
-          }}
+          style={$image}
           source={require('../../assets/images/profile.jpg')}
         />
         <Box ml="s12">
@@ -40,3 +37,16 @@ export function HeaderProfile() {
     </Box>
   );
 }
+
+const $boxStyle: StyleProp<ViewStyle> = {
+  marginTop: -24,
+  marginLeft: -24,
+  marginBottom: -100,
+  borderBottomLeftRadius: 24,
+  borderBottomRightRadius: 24,
+};
+
+const $image: StyleProp<ImageStyle> = {
+  width: 48,
+  height: 48,
+};
