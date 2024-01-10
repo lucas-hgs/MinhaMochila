@@ -11,7 +11,7 @@ import {Box, BoxProps} from '../Box/Box';
 import {$fontFamily, $fontSizes, Text} from '../Text/Text';
 
 interface TextInputProps extends RNTextInputProps {
-  label: string;
+  label?: string;
   errorMessage?: string;
   boxProps?: BoxProps;
 }
@@ -29,19 +29,16 @@ export function TextInput({
     inputRef.current?.focus();
   }
 
-  const $textInputContainer: BoxProps = {
-    borderWidth: errorMessage ? 2 : 1,
-    padding: 's16',
-    borderColor: errorMessage ? 'error' : 'gray4',
-    borderRadius: 's12',
-  };
+  const $textInputContainer: BoxProps = {};
 
   return (
     <Box {...boxProps}>
       <Pressable onPress={focusInput}>
-        <Text preset="paragraphMedium" mb="s4">
-          {label}
-        </Text>
+        {label && (
+          <Text preset="paragraphMedium" mb="s4">
+            {label}
+          </Text>
+        )}
         <Box {...$textInputContainer}>
           <RNTextInput
             placeholderTextColor={colors.gray2}

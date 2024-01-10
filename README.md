@@ -1,8 +1,16 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Minha Mochila
+
+![Minha Mochila](/src/assets/images/readme.png)
+
+Minha Mochila is an React Native APP that is being developed to be the ideal place for you to store your activities and student notes.
+
+Are you tired of having to search for images and notes that are lost in your files? Here you can centralize everything in one place!
 
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 ## Step 1: Start the Metro Server
 
