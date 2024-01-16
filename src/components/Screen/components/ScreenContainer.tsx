@@ -8,11 +8,14 @@ interface Props {
 
 export function ScrollViewContainer({children}: Props) {
   return (
-    <ScrollView keyboardShouldPersistTaps={'handled'} style={{flex: 1}}>
-      <LinearGradient colors={['#D8CFFB', '#FAF0D7']} style={{flex: 1}}>
+    <LinearGradient colors={['#D8CFFB', '#FAF0D7']} style={{flex: 1}}>
+      <ScrollView
+        keyboardShouldPersistTaps={'handled'}
+        showsVerticalScrollIndicator={false}
+        style={{flex: 1}}>
         {children}
-      </LinearGradient>
-    </ScrollView>
+      </ScrollView>
+    </LinearGradient>
   );
 }
 

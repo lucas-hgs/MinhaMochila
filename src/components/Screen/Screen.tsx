@@ -31,7 +31,7 @@ export function Screen({
           paddingHorizontal="s24"
           style={[{paddingVertical: top, paddingBottom: bottom}, style]}>
           {canGoBack && (
-            <Box mb="s24" flexDirection="row">
+            <Box mb="s24" flexDirection="row" alignItems="center">
               <Icon name="arrowLeft" />
               <Text semiBold preset="paragraphMedium" ml="s8">
                 Voltar

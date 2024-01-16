@@ -19,38 +19,36 @@ interface TextInputProps extends RNTextInputProps {
   label?: string;
   errorMessage?: string;
   boxProps?: BoxProps;
-  heading?: 'medium' | 'large';
 }
 
 export function TextInputNote({
   label,
   errorMessage,
   boxProps,
-  heading = 'large',
   ...rnTextInputProps
 }: TextInputProps) {
-  let fonts =
-    heading === 'large' ? $fontSizes.headingLarge : $fontSizes.headingMedium;
   const {colors} = useAppTheme();
   const inputRef = useRef<RNTextInput>(null);
 
   const [title, setTitle] = useState('');
 
-  function focusInput() {
-    offset.value = withSpring(0);
-    inputRef.current?.focus();
-  }
-
-  const $textInputContainer: BoxProps = {};
-
   const offset = useSharedValue(1);
 
   const animatedStyles = useAnimatedStyle(() => {
+    const fontStyles =
+      offset.value > 0
+        ? {...$fontSizes.headingMedium}
+        : {...$fontSizes.paragraphSmall};
     return {
-      opacity: offset.value,
-      //transform: [{translateY: offset.value}],
+      transform: [{translateY: offset.value}],
+      ...fontStyles,
     };
   });
+
+  function focusInput() {
+    offset.value = withSpring(-25);
+    inputRef.current?.focus();
+  }
 
   function moveDown() {
     if (title.length === 0) {
@@ -59,8 +57,7 @@ export function TextInputNote({
   }
 
   const $textStyle: TextStyle = {
-    fontFamily: $fontFamily.black,
-    ...fonts,
+    color: colors.grayBlack,
     position: 'absolute',
     zIndex: 1,
   };
@@ -73,14 +70,14 @@ export function TextInputNote({
           onPress={focusInput}>
           {label}
         </Animated.Text>
-        <Box {...$textInputContainer}>
+        <Box>
           <RNTextInput
+            multiline
             onChangeText={newText => setTitle(newText)}
             defaultValue={title}
             ref={inputRef}
             onBlur={moveDown}
-            placeholderTextColor={colors.gray2}
-            style={[$textInputStyle, {color: colors.darkPurple}]}
+            style={[$textInputStyle, {color: colors.grayBlack}]}
             {...rnTextInputProps}
           />
         </Box>
@@ -95,6 +92,8 @@ export function TextInputNote({
 }
 
 const $textInputStyle: TextStyle = {
-  fontFamily: $fontFamily.black,
+  padding: 0,
+  marginVertical: 5,
+  fontFamily: $fontFamily.regular,
   ...$fontSizes.headingMedium,
 };

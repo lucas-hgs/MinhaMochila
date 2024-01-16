@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {useAppTheme} from '../../hooks/useAppTheme';
 import {Box, BoxProps} from '../Box/Box';
-import {$fontFamily, $fontSizes, Text} from '../Text/Text';
+import {$fontFamily, Text} from '../Text/Text';
 
 interface TextInputProps extends RNTextInputProps {
   label?: string;
@@ -59,5 +59,4 @@ export function TextInput({
 const $textInputStyle: TextStyle = {
   padding: 0,
   fontFamily: $fontFamily.regular,
-  ...$fontSizes.paragraphMedium,
 };
