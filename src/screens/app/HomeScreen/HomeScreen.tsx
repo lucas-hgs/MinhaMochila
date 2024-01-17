@@ -1,4 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {FlatList, ListRenderItemInfo, StyleProp, ViewStyle} from 'react-native';
 import {HeaderProfile} from '../../../components/HeaderProfile/HeaderProfile';
@@ -10,8 +11,11 @@ import {activityListMock} from '../../../domain/Activities.ts/activityListMock';
 import {Activity} from '../../../domain/Activities.ts/types';
 import {noteListMock} from '../../../domain/Notes/noteListMock';
 import {Note} from '../../../domain/Notes/types';
+import {RootStackParamList} from '../../../routes/Routes';
 
-export function HomeScreen() {
+type ScreenProps = NativeStackScreenProps<RootStackParamList, 'HomeScreen'>;
+
+export function HomeScreen({navigation}: ScreenProps) {
   function renderActivityItem({item}: ListRenderItemInfo<Activity>) {
     return <ScheduleActivity activity={item} />;
   }
