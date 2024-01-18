@@ -1,17 +1,19 @@
 import React, {useRef} from 'react';
-
 import {
   Pressable,
   TextInput as RNTextInput,
   TextInputProps as RNTextInputProps,
   TextStyle,
 } from 'react-native';
+
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withSpring,
 } from 'react-native-reanimated';
-import {useAppTheme} from '../../hooks/useAppTheme';
+
+import {useAppTheme} from '@hooks';
+
 import {Box, BoxProps} from '../Box/Box';
 import {$fontFamily, $fontSizes, Text} from '../Text/Text';
 

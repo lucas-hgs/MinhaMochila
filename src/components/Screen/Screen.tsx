@@ -1,9 +1,9 @@
 import React from 'react';
 import {KeyboardAvoidingView, Platform} from 'react-native';
-import {useAppSafeArea} from '../../hooks/useAppSafeArea';
-import {Box, BoxProps} from '../Box/Box';
-import {Icon} from '../Icon/Icon';
-import {Text} from '../Text/Text';
+
+import {Box, BoxProps, Icon, Text} from '@components';
+import {useAppSafeArea} from '@hooks';
+
 import {ScrollViewContainer, ViewContainer} from './components/ScreenContainer';
 
 interface ScreenProps extends BoxProps {

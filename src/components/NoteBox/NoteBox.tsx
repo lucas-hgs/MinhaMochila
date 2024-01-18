@@ -1,9 +1,10 @@
 import React from 'react';
 import {StyleProp, ViewStyle} from 'react-native';
-import {Note} from '../../domain/Notes/types';
-import {useAppTheme} from '../../hooks/useAppTheme';
-import {Box} from '../Box/Box';
-import {Text} from '../Text/Text';
+
+import {Note} from '@domain';
+
+import {Box, Text} from '@components';
+import {useAppTheme} from '@hooks';
 
 interface Props {
   note: Note;

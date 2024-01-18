@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleProp, ViewStyle} from 'react-native';
-import {Activity} from '../../domain/Activities.ts/types';
-import {Box} from '../Box/Box';
-import {Icon} from '../Icon/Icon';
-import {Text} from '../Text/Text';
+
+import {Activity} from '@domain';
+
+import {Box, Icon, Text} from '@components';
 
 export interface Props {
   activity: Activity;

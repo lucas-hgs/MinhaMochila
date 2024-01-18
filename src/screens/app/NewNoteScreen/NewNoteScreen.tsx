@@ -1,13 +1,11 @@
 import React from 'react';
+
+import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
 import {ViewStyle} from 'react-native/types';
-import {zodResolver} from '@hookform/resolvers/zod';
 
-import {Box} from '../../../components/Box/Box';
-import {Button} from '../../../components/Button/Button';
-import {FormTextInputNote} from '../../../components/Form/FormTextInputNote';
-import {Screen} from '../../../components/Screen/Screen';
-import {Text} from '../../../components/Text/Text';
+import {Box, Button, FormTextInputNote, Screen, Text} from '@components';
+
 import {newNoteSchema, NewNoteSchema} from './newNoteSchema';
 
 const defaultValues: NewNoteSchema = {

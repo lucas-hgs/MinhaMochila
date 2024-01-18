@@ -6,8 +6,8 @@ import {
   StyleProp,
   ViewStyle,
 } from 'react-native/';
-import {Box} from '../Box/Box';
-import {Text} from '../Text/Text';
+
+import {Box, Text} from '@components';
 
 export function HeaderProfile() {
   return (

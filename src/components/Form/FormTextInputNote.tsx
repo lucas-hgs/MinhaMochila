@@ -1,6 +1,8 @@
 import React from 'react';
+
 import {Controller, FieldValues, UseControllerProps} from 'react-hook-form';
-import {TextInputNote, TextInputProps} from '../TextInputNote/TextInputNote';
+
+import {TextInputNote, TextInputProps} from '@components';
 
 export function FormTextInputNote<FormType extends FieldValues>({
   control,

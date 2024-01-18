@@ -1,17 +1,18 @@
 /* eslint-disable react-native/no-inline-styles */
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {FlatList, ListRenderItemInfo, StyleProp, ViewStyle} from 'react-native';
-import {HeaderProfile} from '../../../components/HeaderProfile/HeaderProfile';
-import {NoteBox} from '../../../components/NoteBox/NoteBox';
-import {ScheduleActivity} from '../../../components/ScheduleActivity/ScheduleActivity';
-import {Screen} from '../../../components/Screen/Screen';
-import {Text} from '../../../components/Text/Text';
-import {activityListMock} from '../../../domain/Activities.ts/activityListMock';
-import {Activity} from '../../../domain/Activities.ts/types';
-import {noteListMock} from '../../../domain/Notes/noteListMock';
-import {Note} from '../../../domain/Notes/types';
-import {RootStackParamList} from '../../../routes/Routes';
+
+import {activityListMock, Activity, noteListMock, Note} from '@domain';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+import {
+  HeaderProfile,
+  NoteBox,
+  ScheduleActivity,
+  Screen,
+  Text,
+} from '@components';
+import {RootStackParamList} from '@routes';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'HomeScreen'>;
 

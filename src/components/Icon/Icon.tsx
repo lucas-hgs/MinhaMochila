@@ -1,12 +1,14 @@
 import React from 'react';
+
+import {useAppTheme} from '@hooks';
+import {ThemeColors} from '@theme';
+
 import {ActivityIcon} from '../../assets/icons/ActivityIcon';
 import {AddIcon} from '../../assets/icons/AddIcon';
 import {ArrowLeftIcon} from '../../assets/icons/ArrowLeftIcon';
 import {FolderIcon} from '../../assets/icons/FolderIcon';
 import {HomeIcon} from '../../assets/icons/HomeIcon';
 import {SettingsIcon} from '../../assets/icons/SettingsIcon';
-import {useAppTheme} from '../../hooks/useAppTheme';
-import {ThemeColors} from '../../theme/theme';
 
 export interface IconBase {
   size?: number;
