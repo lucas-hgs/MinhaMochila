@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
 
 import {
   Pressable,
@@ -15,7 +15,7 @@ import {useAppTheme} from '../../hooks/useAppTheme';
 import {Box, BoxProps} from '../Box/Box';
 import {$fontFamily, $fontSizes, Text} from '../Text/Text';
 
-interface TextInputProps extends RNTextInputProps {
+export interface TextInputProps extends RNTextInputProps {
   label?: string;
   errorMessage?: string;
   boxProps?: BoxProps;
@@ -25,12 +25,11 @@ export function TextInputNote({
   label,
   errorMessage,
   boxProps,
+  value,
   ...rnTextInputProps
 }: TextInputProps) {
   const {colors} = useAppTheme();
   const inputRef = useRef<RNTextInput>(null);
-
-  const [title, setTitle] = useState('');
 
   const offset = useSharedValue(1);
 
@@ -51,7 +50,7 @@ export function TextInputNote({
   }
 
   function moveDown() {
-    if (title.length === 0) {
+    if (value?.length === 0) {
       offset.value = withSpring(1);
     }
   }
@@ -73,8 +72,6 @@ export function TextInputNote({
         <Box>
           <RNTextInput
             multiline
-            onChangeText={newText => setTitle(newText)}
-            defaultValue={title}
             ref={inputRef}
             onBlur={moveDown}
             style={[$textInputStyle, {color: colors.grayBlack}]}
