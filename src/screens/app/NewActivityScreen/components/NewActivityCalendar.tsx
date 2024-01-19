@@ -18,7 +18,7 @@ export function NewActivityCalendar({value, setValue}: Props) {
 
   return (
     <Box
-      mt="s24"
+      mt="s16"
       mb="s24"
       backgroundColor="lightPurple"
       borderWidth={1}
