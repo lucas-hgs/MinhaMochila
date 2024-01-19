@@ -41,7 +41,7 @@ export function NewNoteScreen() {
               name="description"
               control={control}
               label="Escreva suas anotações"
-              boxProps={{mt: 's24'}}
+              boxProps={{mt: 's32'}}
             />
           </Box>
 
