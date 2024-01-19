@@ -4,7 +4,7 @@ export const activityListMock: Activity[] = [
   {
     id: 'activity_1',
     title: 'Prova',
-    text: 'Sistemas',
+    text: 'Sistemas de informação',
     date: '11-01-2024',
   },
   {

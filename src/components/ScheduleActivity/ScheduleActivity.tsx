@@ -19,7 +19,7 @@ export function ScheduleActivity({activity}: Props) {
         <Text preset="paragraphSmall" color="lightBlue">
           {activity.title}
         </Text>
-        <Text preset="paragraphSmall" color="purple">
+        <Text preset="paragraphCaptionSmall" color="purple">
           {activity.text}
         </Text>
         <Text preset="paragraphSmall" color="lightBlue">
