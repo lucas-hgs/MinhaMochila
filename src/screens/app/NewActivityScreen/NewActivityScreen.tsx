@@ -45,13 +45,13 @@ export function NewActivityScreen() {
               name="description"
               control={control}
               label="Breve descrição"
-              boxProps={{mt: 's32'}}
+              boxProps={{mt: 's24'}}
               maxLength={20}
             />
           </Box>
         </Box>
 
-        <Text mt="s16" preset="paragraphVariantMedium">
+        <Text mt="s12" preset="paragraphVariantMedium">
           Data da Atividade:
         </Text>
 

@@ -47,7 +47,7 @@ export function TextInputNote({
   });
 
   function focusInput() {
-    offset.value = withSpring(-25);
+    offset.value = withSpring(-15);
     inputRef.current?.focus();
   }
 
