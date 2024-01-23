@@ -2,7 +2,7 @@ import React from 'react';
 import {Dimensions, Pressable} from 'react-native';
 
 import {Box, Button, Icon, Screen, Text} from '@components';
-import { AppScreenProps } from '@routes';
+import {AppScreenProps} from '@routes';
 
 export function CreationScreen({navigation}: AppScreenProps<'CreationScreen'>) {
   const dimesionWidow = Dimensions.get('window').height;
@@ -58,7 +58,7 @@ export function CreationScreen({navigation}: AppScreenProps<'CreationScreen'>) {
           </Box>
         </Pressable>
       </Box>
-      <Button title="Voltar" />
+      <Button onPress={navigation.goBack} title="Voltar" />
     </Screen>
   );
 }
