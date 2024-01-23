@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {Svg, Rect, Defs, Pattern, Use, Image} from 'react-native-svg';
 
 interface Props {

@@ -8,6 +8,7 @@ import {AddIcon} from '../../assets/icons/AddIcon';
 import {ArrowLeftIcon} from '../../assets/icons/ArrowLeftIcon';
 import {FolderIcon} from '../../assets/icons/FolderIcon';
 import {HomeIcon} from '../../assets/icons/HomeIcon';
+import {NoteIcon} from '../../assets/icons/NoteIcon';
 import {SettingsIcon} from '../../assets/icons/SettingsIcon';
 
 export interface IconBase {
@@ -34,6 +35,7 @@ const iconRegistry = {
   arrowLeft: ArrowLeftIcon,
   folder: FolderIcon,
   home: HomeIcon,
+  note: NoteIcon,
   settings: SettingsIcon,
 };
 

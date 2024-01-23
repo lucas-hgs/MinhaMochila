@@ -39,19 +39,21 @@ export function NewActivityScreen() {
               label="Título da Atividade"
               boxProps={{mt: 's16'}}
               maxLength={20}
+              multiline={false}
             />
 
             <FormTextInputNote
               name="description"
               control={control}
               label="Breve descrição"
-              boxProps={{mt: 's24'}}
+              boxProps={{mt: 's20'}}
               maxLength={20}
+              multiline={false}
             />
           </Box>
         </Box>
 
-        <Text mt="s12" preset="paragraphVariantMedium">
+        <Text mt="s8" preset="paragraphVariantMedium">
           Data da Atividade:
         </Text>
 

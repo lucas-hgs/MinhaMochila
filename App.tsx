@@ -3,7 +3,7 @@ import React from 'react';
 import {ThemeProvider} from '@shopify/restyle/dist/context';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import {HomeScreen, NewNoteScreen, NewActivityScreen} from '@screens';
+import {CreationScreen} from '@screens';
 
 import {theme} from './src/theme/theme';
 
@@ -13,7 +13,8 @@ function App(): JSX.Element {
       <ThemeProvider theme={theme}>
         {/* <HomeScreen /> */}
         {/* <NewNoteScreen /> */}
-        <NewActivityScreen />
+        {/* <NewActivityScreen /> */}
+        <CreationScreen />
       </ThemeProvider>
     </SafeAreaProvider>
   );
