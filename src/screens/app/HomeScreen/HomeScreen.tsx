@@ -3,7 +3,6 @@ import React from 'react';
 import {FlatList, ListRenderItemInfo, StyleProp, ViewStyle} from 'react-native';
 
 import {activityListMock, Activity, noteListMock, Note} from '@domain';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 import {
   HeaderProfile,
@@ -12,11 +11,9 @@ import {
   Screen,
   Text,
 } from '@components';
-import {AppStackParamList} from '@routes';
+import {AppTabScreenProps} from '@routes';
 
-type ScreenProps = NativeStackScreenProps<AppStackParamList, 'HomeScreen'>;
-
-export function HomeScreen({navigation}: ScreenProps) {
+export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
   function renderActivityItem({item}: ListRenderItemInfo<Activity>) {
     return <ScheduleActivity activity={item} />;
   }

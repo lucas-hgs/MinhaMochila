@@ -1,14 +1,10 @@
 import React from 'react';
 import {Dimensions, Pressable} from 'react-native';
 
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-
 import {Box, Button, Icon, Screen, Text} from '@components';
-import {AppStackParamList} from '@routes';
+import { AppScreenProps } from '@routes';
 
-type ScreenProps = NativeStackScreenProps<AppStackParamList, 'CreationScreen'>;
-
-export function CreationScreen({navigation}: ScreenProps) {
+export function CreationScreen({navigation}: AppScreenProps<'CreationScreen'>) {
   const dimesionWidow = Dimensions.get('window').height;
   const FIXED_DIMESION = dimesionWidow - (dimesionWidow * 25) / 100;
 
