@@ -1,5 +1,7 @@
 import React from 'react';
-import {KeyboardAvoidingView, Platform} from 'react-native';
+import {KeyboardAvoidingView, Platform, Pressable} from 'react-native';
+
+import {useNavigation} from '@react-navigation/native';
 
 import {Box, BoxProps, Icon, Text} from '@components';
 import {useAppSafeArea} from '@hooks';
@@ -18,6 +20,7 @@ export function Screen({
   scrollabe = false,
   style,
 }: ScreenProps) {
+  const navigation = useNavigation();
   const {top, bottom} = useAppSafeArea();
 
   const Container = scrollabe ? ScrollViewContainer : ViewContainer;
@@ -31,12 +34,14 @@ export function Screen({
           paddingHorizontal="s24"
           style={[{paddingVertical: top, paddingBottom: bottom}, style]}>
           {canGoBack && (
-            <Box mb="s24" flexDirection="row" alignItems="center">
-              <Icon name="arrowLeft" />
-              <Text semiBold preset="paragraphMedium" ml="s8">
-                Voltar
-              </Text>
-            </Box>
+            <Pressable onPress={navigation.goBack}>
+              <Box mb="s24" flexDirection="row" alignItems="center">
+                <Icon name="arrowLeft" />
+                <Text semiBold preset="paragraphMedium" ml="s8">
+                  Voltar
+                </Text>
+              </Box>
+            </Pressable>
           )}
           {children}
         </Box>

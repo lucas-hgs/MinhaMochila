@@ -12,9 +12,9 @@ import {
   Screen,
   Text,
 } from '@components';
-import {RootStackParamList} from '@routes';
+import {AppStackParamList} from '@routes';
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'HomeScreen'>;
+type ScreenProps = NativeStackScreenProps<AppStackParamList, 'HomeScreen'>;
 
 export function HomeScreen({navigation}: ScreenProps) {
   function renderActivityItem({item}: ListRenderItemInfo<Activity>) {
