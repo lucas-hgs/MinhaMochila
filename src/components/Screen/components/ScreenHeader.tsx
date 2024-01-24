@@ -33,7 +33,7 @@ export function ScreenHeader({
           alignItems="center"
           mr="s10"
           onPress={navigation.goBack}>
-          <Icon size={ICON_SIZE} name="arrowLeft" color="primary" />
+          <Icon size={ICON_SIZE} name="arrowLeft" color="purple" />
           {showBackLabel && (
             <Text preset="paragraphMedium" semiBold ml="s8">
               Voltar

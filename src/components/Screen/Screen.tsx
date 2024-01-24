@@ -25,7 +25,7 @@ export function Screen({
   HeaderComponent,
   ...boxProps
 }: ScreenProps) {
-  const {bottom, top} = useAppSafeArea();
+  const {top} = useAppSafeArea();
 
   const Container = scrollable ? ScrollViewContainer : ViewContainer;
   return (
@@ -35,7 +35,7 @@ export function Screen({
       <Container>
         <Box
           paddingHorizontal={noPaddingHorizontal ? undefined : 's24'}
-          style={[{paddingTop: top, paddingBottom: bottom}, style]}
+          style={[{paddingTop: top}, style]}
           {...boxProps}>
           <ScreenHeader
             paddingHorizontal={noPaddingHorizontal ? 's24' : undefined}

@@ -29,7 +29,7 @@ export function NewActivityScreen() {
   }
 
   return (
-    <Screen canGoBack scrollabe>
+    <Screen canGoBack scrollable>
       <Box justifyContent="space-between">
         <Box>
           <Box>

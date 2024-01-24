@@ -49,4 +49,28 @@ export const activityListMock: Activity[] = [
     text: 'Sistemas',
     date: '21-09-2024',
   },
+  {
+    id: 'activity_9',
+    title: 'Trabalho',
+    text: 'Sistemas',
+    date: '21-09-2024',
+  },
+  {
+    id: 'activity_10',
+    title: 'Trabalho',
+    text: 'Sistemas',
+    date: '21-09-2024',
+  },
+  {
+    id: 'activity_11',
+    title: 'Trabalho',
+    text: 'Sistemas',
+    date: '21-09-2024',
+  },
+  {
+    id: 'activity_12',
+    title: 'Trabalho',
+    text: 'Sistemas',
+    date: '21-09-2024',
+  },
 ];

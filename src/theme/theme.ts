@@ -46,6 +46,7 @@ export const theme = createTheme({
     successLight: palette.greenSuccessLight,
   },
   spacing: {
+    sMinus24: -24,
     s4: 4,
     s8: 8,
     s10: 10,
