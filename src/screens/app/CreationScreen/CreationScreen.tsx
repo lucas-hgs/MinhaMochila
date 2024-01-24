@@ -18,7 +18,7 @@ export function CreationScreen({navigation}: AppScreenProps<'CreationScreen'>) {
 
   return (
     <Screen>
-      <Box height={FIXED_DIMESION} justifyContent="center" mb="s56">
+      <Box height={FIXED_DIMESION} justifyContent="center" mb="s32">
         <Pressable onPress={navigateToNewActivityScreen}>
           <Box
             height={180}
@@ -58,7 +58,7 @@ export function CreationScreen({navigation}: AppScreenProps<'CreationScreen'>) {
           </Box>
         </Pressable>
       </Box>
-      <Button onPress={navigation.goBack} title="Voltar" />
+      <Button onPress={navigation.goBack} title="Voltar" mb="s48" />
     </Screen>
   );
 }

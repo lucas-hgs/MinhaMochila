@@ -16,13 +16,13 @@ export interface IconBase {
   color?: string;
 }
 
-interface Props {
+export interface IconProps {
   name: IconName;
   color?: ThemeColors;
   size?: number;
 }
 
-export function Icon({name, color = 'purple', size}: Props) {
+export function Icon({name, color = 'purple', size}: IconProps) {
   const {colors} = useAppTheme();
   const SVGIcon = iconRegistry[name];
 
