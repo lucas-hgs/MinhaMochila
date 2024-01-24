@@ -1,48 +1,48 @@
 import React from 'react';
-import {KeyboardAvoidingView, Platform, Pressable} from 'react-native';
+import {KeyboardAvoidingView, Platform} from 'react-native';
 
-import {useNavigation} from '@react-navigation/native';
-
-import {Box, BoxProps, Icon, Text} from '@components';
+import {Box, BoxProps} from '@components';
 import {useAppSafeArea} from '@hooks';
 
-import {ScrollViewContainer, ViewContainer} from './components/ScreenContainer';
+import {ScrollViewContainer, ViewContainer, ScreenHeader} from './components';
 
-interface ScreenProps extends BoxProps {
+export interface ScreenProps extends BoxProps {
   children: React.ReactNode;
+  HeaderComponent?: React.ReactNode;
   canGoBack?: boolean;
-  scrollabe?: boolean;
+  scrollable?: boolean;
+  title?: string;
+  noPaddingHorizontal?: boolean;
 }
 
 export function Screen({
   children,
   canGoBack = false,
-  scrollabe = false,
+  scrollable = false,
   style,
+  title,
+  noPaddingHorizontal = false,
+  HeaderComponent,
+  ...boxProps
 }: ScreenProps) {
-  const navigation = useNavigation();
-  const {top, bottom} = useAppSafeArea();
+  const {bottom, top} = useAppSafeArea();
 
-  const Container = scrollabe ? ScrollViewContainer : ViewContainer;
-
+  const Container = scrollable ? ScrollViewContainer : ViewContainer;
   return (
     <KeyboardAvoidingView
       style={{flex: 1}}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <Container>
         <Box
-          paddingHorizontal="s24"
-          style={[{paddingVertical: top, paddingBottom: bottom}, style]}>
-          {canGoBack && (
-            <Pressable onPress={navigation.goBack}>
-              <Box mb="s24" flexDirection="row" alignItems="center">
-                <Icon name="arrowLeft" />
-                <Text semiBold preset="paragraphMedium" ml="s8">
-                  Voltar
-                </Text>
-              </Box>
-            </Pressable>
-          )}
+          paddingHorizontal={noPaddingHorizontal ? undefined : 's24'}
+          style={[{paddingTop: top, paddingBottom: bottom}, style]}
+          {...boxProps}>
+          <ScreenHeader
+            paddingHorizontal={noPaddingHorizontal ? 's24' : undefined}
+            HeaderComponent={HeaderComponent}
+            canGoBack={canGoBack}
+            title={title}
+          />
           {children}
         </Box>
       </Container>

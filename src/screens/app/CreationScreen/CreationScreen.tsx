@@ -18,7 +18,7 @@ export function CreationScreen({navigation}: AppScreenProps<'CreationScreen'>) {
 
   return (
     <Screen>
-      <Box height={FIXED_DIMESION} justifyContent="center" mb="s32">
+      <Box height={FIXED_DIMESION} justifyContent="center">
         <Pressable onPress={navigateToNewActivityScreen}>
           <Box
             height={180}

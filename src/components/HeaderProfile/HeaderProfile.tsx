@@ -39,7 +39,7 @@ export function HeaderProfile() {
 }
 
 const $boxStyle: StyleProp<ViewStyle> = {
-  marginTop: -24,
+  marginTop: -50,
   marginLeft: -24,
   marginBottom: -100,
   borderBottomLeftRadius: 24,
