@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import {zodResolver} from '@hookform/resolvers/zod';
+import {dateUtils} from '@utils';
 import dayjs from 'dayjs';
 import {useForm} from 'react-hook-form';
 import {DateType} from 'react-native-ui-datepicker/lib/typescript/src/types';
@@ -25,7 +26,10 @@ export function NewActivityScreen() {
 
   function submitForm(formValues: NewActivitySchema) {
     console.log(formValues);
-    console.log(value);
+    const newDate = dateUtils.formatDate(value);
+    console.log(
+      `Agendamento para o dia: ${newDate.formatedDate} as ${newDate.formatedTime}`,
+    );
   }
 
   return (
