@@ -9,6 +9,7 @@ import {AppTabBottomTabParamList, AppTabNavigator} from './AppTabNavigator';
 
 export type AppStackParamList = {
   AppTabNavigator: NavigatorScreenParams<AppTabBottomTabParamList>;
+  HomeScreen: undefined;
   NewNoteScreen: undefined;
   NewActivityScreen: undefined;
   CreationScreen: undefined;

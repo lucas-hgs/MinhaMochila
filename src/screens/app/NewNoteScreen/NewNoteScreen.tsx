@@ -1,6 +1,8 @@
 import React from 'react';
 
 import {zodResolver} from '@hookform/resolvers/zod';
+import {useNavigation} from '@react-navigation/native';
+import {useToastService} from '@services';
 import {useForm} from 'react-hook-form';
 import {ViewStyle} from 'react-native/types';
 
@@ -19,9 +21,12 @@ export function NewNoteScreen() {
     defaultValues,
     mode: 'onChange',
   });
+  const {showToast} = useToastService();
+  const {navigate} = useNavigation();
 
   function submitForm(formValues: NewNoteSchema) {
-    console.log(formValues);
+    showToast({message: 'Nova Nota adicionada!', duration: 3000});
+    navigate('HomeScreen');
   }
 
   return (

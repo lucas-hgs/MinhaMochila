@@ -1,7 +1,7 @@
 import React from 'react';
 import {Dimensions} from 'react-native';
 
-import {Toast, ToastPosition, ToastType} from '@services';
+import {Toast, ToastType, ToastPosition} from '@services';
 
 import {Box, BoxProps, Icon, IconProps, Text} from '@components';
 import {$shadowProps} from '@theme';
@@ -38,9 +38,7 @@ const mapTypeToIcon: Record<ToastType, IconProps> = {
 };
 
 const $boxStyle: BoxProps = {
-  position: 'absolute',
   flexDirection: 'row',
-  alignSelf: 'center',
   alignItems: 'center',
   padding: 's16',
   borderRadius: 's16',
