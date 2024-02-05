@@ -6,6 +6,7 @@ import {ThemeColors} from '@theme';
 import {ActivityIcon} from '../../assets/icons/ActivityIcon';
 import {AddIcon} from '../../assets/icons/AddIcon';
 import {ArrowLeftIcon} from '../../assets/icons/ArrowLeftIcon';
+import {CheckRoundIcon} from '../../assets/icons/CheckRoundIcon';
 import {FolderIcon} from '../../assets/icons/FolderIcon';
 import {HomeIcon} from '../../assets/icons/HomeIcon';
 import {NoteIcon} from '../../assets/icons/NoteIcon';
@@ -33,6 +34,7 @@ const iconRegistry = {
   activity: ActivityIcon,
   add: AddIcon,
   arrowLeft: ArrowLeftIcon,
+  checkRound: CheckRoundIcon,
   folder: FolderIcon,
   home: HomeIcon,
   note: NoteIcon,
