@@ -13,7 +13,7 @@ import {newNoteSchema, NewNoteSchema} from './newNoteSchema';
 const defaultValues: NewNoteSchema = {
   title: '',
   description: '',
-  id: new Date().toDateString(),
+  id: Date.now().toString(),
 };
 
 export function NewNoteScreen() {
@@ -27,9 +27,18 @@ export function NewNoteScreen() {
 
   async function submitForm(formValues: NewNoteSchema) {
     try {
-      await noteStorage.set(formValues);
+      const oldValues = await noteStorage.get();
+
+      if (oldValues === null) {
+        const newArrList = [formValues];
+        await noteStorage.set(newArrList);
+      } else {
+        const newArrList = [...oldValues, formValues];
+
+        console.log(newArrList);
+      }
     } catch (error) {
-      //TODO handle ERROR
+      navigate('CreationScreen');
     } finally {
       showToast({message: 'Nova Nota adicionada!', duration: 3000});
       navigate('HomeScreen');

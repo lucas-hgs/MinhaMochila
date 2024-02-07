@@ -1,8 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useEffect} from 'react';
 import {FlatList, ListRenderItemInfo, StyleProp, ViewStyle} from 'react-native';
 
-import {activityListMock, Activity, noteListMock, Note} from '@domain';
+import {activityListMock, Activity, Note} from '@domain';
+import {asyncStorage} from '@services';
 
 import {
   HeaderProfile,
@@ -13,7 +14,11 @@ import {
 } from '@components';
 import {AppTabScreenProps} from '@routes';
 
-export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
+export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
+  useEffect(() => {
+    asyncStorage.clear();
+  }, []);
+
   function renderActivityItem({item}: ListRenderItemInfo<Activity>) {
     return <ScheduleActivity activity={item} />;
   }
@@ -45,9 +50,10 @@ export function HomeScreen({navigation}: AppTabScreenProps<'HomeScreen'>) {
 
       <FlatList
         showsVerticalScrollIndicator={false}
-        data={noteListMock}
+        data={null}
         keyExtractor={item => item.id.toString()}
         renderItem={renderNoteItem}
+        ListEmptyComponent={<Text>Não há itens</Text>}
         style={{
           minHeight: 130,
         }}

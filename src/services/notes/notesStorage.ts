@@ -4,12 +4,12 @@ import {storage} from '../storage';
 
 const NOTE_KEY = '@Note';
 
-async function set(note: Note): Promise<void> {
+async function set(note: Note[]): Promise<void> {
   await storage.setItem(NOTE_KEY, note);
 }
 
-async function get(): Promise<Note | null> {
-  const note = await storage.getItem<Note>(NOTE_KEY);
+async function get(): Promise<Note[] | null> {
+  const note = await storage.getItem<Note[]>(NOTE_KEY);
   return note;
 }
 
