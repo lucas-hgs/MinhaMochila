@@ -34,8 +34,7 @@ export function NewNoteScreen() {
         await noteStorage.set(newArrList);
       } else {
         const newArrList = [...oldValues, formValues];
-
-        console.log(newArrList);
+        await noteStorage.set(newArrList);
       }
     } catch (error) {
       navigate('CreationScreen');

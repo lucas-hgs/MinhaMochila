@@ -1,4 +1,8 @@
-import {Note} from '@domain';
+export interface Note {
+  id: string;
+  title: string;
+  description: string;
+}
 
 export interface NotesService {
   note: Note | null;

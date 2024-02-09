@@ -1,6 +1,6 @@
-import {Note} from '@domain';
-
 import {storage} from '../storage';
+
+import {Note} from './noteTypes';
 
 const NOTE_KEY = '@Note';
 

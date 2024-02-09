@@ -15,9 +15,9 @@ import {
 import {AppTabScreenProps} from '@routes';
 
 export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
-  useEffect(() => {
-    asyncStorage.clear();
-  }, []);
+  // useEffect(() => {
+  //   asyncStorage.clear();
+  // }, []);
 
   function renderActivityItem({item}: ListRenderItemInfo<Activity>) {
     return <ScheduleActivity activity={item} />;
