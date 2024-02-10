@@ -7,7 +7,7 @@ export function useNote(): NotesService['note'] {
 
 export function useNoteService(): Pick<
   NotesService,
-  'saveNote' | 'removeNote'
+  'saveNote' | 'removeNote' | 'note'
 > {
   return useNoteServiceZustand();
 }

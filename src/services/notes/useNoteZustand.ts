@@ -15,13 +15,15 @@ export function useNoteZustand(): NotesService['note'] {
 
 export function useNoteServiceZustand(): Pick<
   NotesService,
-  'saveNote' | 'removeNote'
+  'saveNote' | 'removeNote' | 'note'
 > {
   const saveNote = useNoteStore(state => state.saveNote);
   const removeNote = useNoteStore(state => state.removeNote);
+  const note = useNoteStore(state => state.note);
 
   return {
     saveNote,
     removeNote,
+    note,
   };
 }

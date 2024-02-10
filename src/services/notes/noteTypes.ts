@@ -5,8 +5,8 @@ export interface Note {
 }
 
 export interface NotesService {
-  note: Note | null;
-  saveNote: (note: Note) => Promise<void>;
+  note: Note[] | null;
+  saveNote: (note: Note[]) => Promise<void>;
   removeNote: () => Promise<void>;
   isLoading: boolean;
 }

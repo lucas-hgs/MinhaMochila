@@ -2,7 +2,7 @@ import React from 'react';
 
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useNavigation} from '@react-navigation/native';
-import {noteStorage, useToastService} from '@services';
+import {noteStorage, useNoteService, useToastService} from '@services';
 import {useForm} from 'react-hook-form';
 import {ViewStyle} from 'react-native/types';
 
@@ -22,6 +22,7 @@ export function NewNoteScreen() {
     defaultValues,
     mode: 'onChange',
   });
+  const {saveNote} = useNoteService();
   const {showToast} = useToastService();
   const {navigate} = useNavigation();
 
@@ -32,9 +33,11 @@ export function NewNoteScreen() {
       if (oldValues === null) {
         const newArrList = [formValues];
         await noteStorage.set(newArrList);
+        saveNote(newArrList);
       } else {
         const newArrList = [...oldValues, formValues];
         await noteStorage.set(newArrList);
+        saveNote(newArrList);
       }
     } catch (error) {
       navigate('CreationScreen');

@@ -52,7 +52,7 @@ export function NoteBox({note}: Props) {
         {note.title}
       </Text>
       <Text preset="paragraphMedium" color="purple" numberOfLines={3}>
-        {note.text}
+        {note.description}
       </Text>
     </Box>
   );
