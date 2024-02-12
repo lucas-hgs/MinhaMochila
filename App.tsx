@@ -3,6 +3,7 @@ import React from 'react';
 import {asyncStorage, initializeStorage} from '@services';
 import {ThemeProvider} from '@shopify/restyle/dist/context';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {NotesProvider} from 'src/services/notes/Providers/NotesProvider';
 
 import {Toast} from '@components';
 import {Router} from '@routes';
@@ -13,12 +14,14 @@ initializeStorage(asyncStorage);
 
 function App(): JSX.Element {
   return (
-    <SafeAreaProvider>
-      <ThemeProvider theme={theme}>
-        <Router />
-        <Toast />
-      </ThemeProvider>
-    </SafeAreaProvider>
+    <NotesProvider>
+      <SafeAreaProvider>
+        <ThemeProvider theme={theme}>
+          <Router />
+          <Toast />
+        </ThemeProvider>
+      </SafeAreaProvider>
+    </NotesProvider>
   );
 }
 
