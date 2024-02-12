@@ -22,7 +22,7 @@ export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
   }
 
   function renderNoteItem({item}: ListRenderItemInfo<Note>) {
-    return <NoteBox note={item} />;
+    return <NoteBox note={item} key={item.id} />;
   }
 
   return (

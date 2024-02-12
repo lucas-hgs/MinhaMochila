@@ -34,6 +34,7 @@ export function NotesProvider({children}: React.PropsWithChildren<{}>) {
   async function saveNote(nt: Note[]): Promise<void> {
     noteStorage.set(nt);
     setNote(nt);
+    startNotes();
   }
 
   async function removeNote(): Promise<void> {

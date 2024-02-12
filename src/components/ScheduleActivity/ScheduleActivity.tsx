@@ -32,6 +32,7 @@ export function ScheduleActivity({activity}: Props) {
 
 const $boxStyle: StyleProp<ViewStyle> = {
   minHeight: 130,
+  maxHeight: 130,
   width: 130,
   backgroundColor: '#FFF',
   borderRadius: 16,

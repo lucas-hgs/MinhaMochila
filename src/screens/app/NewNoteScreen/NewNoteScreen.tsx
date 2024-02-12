@@ -31,10 +31,12 @@ export function NewNoteScreen() {
       const oldValues = await noteStorage.get();
 
       if (oldValues === null) {
+        formValues.id = Date.now().toString();
         const newArrList = [formValues];
         await noteStorage.set(newArrList);
         saveNote(newArrList);
       } else {
+        formValues.id = Date.now().toString();
         const newArrList = [...oldValues, formValues];
         await noteStorage.set(newArrList);
         saveNote(newArrList);

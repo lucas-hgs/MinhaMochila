@@ -1,13 +1,24 @@
 import {create} from 'zustand';
+import {createJSONStorage, persist} from 'zustand/middleware';
+
+import {asyncStorage} from '../storage';
 
 import {NotesService} from './noteTypes';
 
-const useNoteStore = create<NotesService>(set => ({
-  note: null,
-  saveNote: async note => set({note}),
-  removeNote: async () => {},
-  isLoading: true,
-}));
+const useNoteStore = create<NotesService>()(
+  persist(
+    set => ({
+      note: null,
+      saveNote: async note => set({note}),
+      removeNote: async () => {},
+      isLoading: true,
+    }),
+    {
+      name: 'list-storage',
+      storage: createJSONStorage(() => asyncStorage),
+    },
+  ),
+);
 
 export function useNoteZustand(): NotesService['note'] {
   return useNoteStore(state => state.note);

@@ -1,9 +1,8 @@
 import React from 'react';
 
-import {asyncStorage, initializeStorage} from '@services';
+import {NotesProvider, asyncStorage, initializeStorage} from '@services';
 import {ThemeProvider} from '@shopify/restyle/dist/context';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {NotesProvider} from 'src/services/notes/Providers/NotesProvider';
 
 import {Toast} from '@components';
 import {Router} from '@routes';

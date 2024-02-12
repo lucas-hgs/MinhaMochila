@@ -17,4 +17,8 @@ async function remove(): Promise<void> {
   await storage.removeItem(NOTE_KEY);
 }
 
-export const noteStorage = {set, get, remove};
+async function clear(): Promise<void> {
+  await storage.clear();
+}
+
+export const noteStorage = {set, get, remove, clear};

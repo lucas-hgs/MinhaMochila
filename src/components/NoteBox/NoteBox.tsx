@@ -47,7 +47,7 @@ export function NoteBox({note}: Props) {
   };
 
   return (
-    <Box style={$boxStyle} padding="s14" mb="s24">
+    <Box key={note.id} style={$boxStyle} padding="s14" mb="s24">
       <Text bold preset="headingMedium" color="darkPurple">
         {note.title}
       </Text>
