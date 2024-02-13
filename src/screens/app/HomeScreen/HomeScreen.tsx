@@ -2,8 +2,8 @@
 import React from 'react';
 import {FlatList, ListRenderItemInfo, StyleProp, ViewStyle} from 'react-native';
 
-import {activityListMock, Activity, Note} from '@domain';
-import {useNoteService} from '@services';
+import {Activity, Note} from '@domain';
+import {useActivityService, useNoteService} from '@services';
 
 import {
   HeaderProfile,
@@ -14,10 +14,12 @@ import {
 } from '@components';
 import {AppTabScreenProps} from '@routes';
 
+import {EmptyActivityList} from './components/EmptyActivityList';
 import {EmptyNoteList} from './components/EmptyNoteList';
 
 export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
   const {note} = useNoteService();
+  const {activity} = useActivityService();
 
   function renderActivityItem({item}: ListRenderItemInfo<Activity>) {
     return <ScheduleActivity activity={item} />;
@@ -36,11 +38,12 @@ export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
       </Text>
 
       <FlatList
-        data={activityListMock}
+        data={activity}
         keyExtractor={item => item.id.toString()}
         renderItem={renderActivityItem}
         horizontal
         showsHorizontalScrollIndicator={false}
+        ListEmptyComponent={<EmptyActivityList />}
         style={$activityList}
       />
 
