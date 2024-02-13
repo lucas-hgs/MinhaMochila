@@ -24,10 +24,10 @@ export function EmptyNoteList() {
         alignItems="center"
         justifyContent="center"
         style={$boxProps}>
-        <Text preset="headingSmall" color="gray1">
+        <Text preset="headingSmall" color="gray3">
           Você ainda não criou nenhuma nota
         </Text>
-        <Text preset="headingSmall" color="gray1">
+        <Text preset="headingSmall" color="gray3">
           comece apertando aqui
         </Text>
       </Box>
