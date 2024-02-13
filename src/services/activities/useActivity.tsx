@@ -4,11 +4,11 @@ import {
   useActivityZustand,
 } from './useActivityZustand';
 
-export function useNote(): ActivitiesService['activity'] {
+export function useActivity(): ActivitiesService['activity'] {
   return useActivityZustand();
 }
 
-export function useNoteService(): Pick<
+export function useActivityService(): Pick<
   ActivitiesService,
   'saveActivity' | 'removeActivity' | 'activity'
 > {
