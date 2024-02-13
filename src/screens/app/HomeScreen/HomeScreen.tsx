@@ -14,6 +14,8 @@ import {
 } from '@components';
 import {AppTabScreenProps} from '@routes';
 
+import {EmptyNoteList} from './components/EmptyNoteList';
+
 export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
   const {note} = useNoteService();
 
@@ -51,7 +53,7 @@ export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
         data={note}
         keyExtractor={item => item.id.toString()}
         renderItem={renderNoteItem}
-        ListEmptyComponent={<Text>Não há itens</Text>}
+        ListEmptyComponent={<EmptyNoteList />}
         style={{
           minHeight: 130,
         }}
