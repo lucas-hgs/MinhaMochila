@@ -20,10 +20,13 @@ export function ScheduleActivity({activity}: Props) {
           {activity.title}
         </Text>
         <Text preset="paragraphCaptionSmall" color="purple">
-          {activity.text}
+          {activity.description}
         </Text>
         <Text preset="paragraphSmall" color="lightBlue">
-          {activity.date}
+          {activity.date.fullDate}
+        </Text>
+        <Text preset="paragraphCaption" color="purple">
+          {activity.date.hours}
         </Text>
       </Box>
     </Box>

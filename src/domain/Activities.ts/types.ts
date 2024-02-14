@@ -1,6 +1,9 @@
 export interface Activity {
   id: string;
   title: string;
-  text: string;
-  date: string;
+  description: string;
+  date: {
+    fullDate: string;
+    hours: string;
+  };
 }

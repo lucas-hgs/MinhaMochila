@@ -6,6 +6,11 @@ export const newActivitySchema = z.object({
     .string()
     .min(1, 'Descrição muito curta')
     .max(20, 'Descrição muito longa'),
+  id: z.string(),
+  date: z.object({
+    fullDate: z.string(),
+    hours: z.string(),
+  }),
 });
 
 export type NewActivitySchema = z.infer<typeof newActivitySchema>;
