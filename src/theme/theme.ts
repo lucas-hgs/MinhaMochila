@@ -18,6 +18,7 @@ const palette = {
   redStrongError: '#FF0404',
   redError: '#EA3838',
   redErrorLight: '#FBECEC',
+  redPastel: '#F8858B',
 
   grayBlack: '#000000',
   gray1: '#636363',
