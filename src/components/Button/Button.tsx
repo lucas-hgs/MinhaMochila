@@ -5,7 +5,7 @@ import {TouchableOpacityBox, TouchableOpacityBoxProps, Text} from '@components';
 
 import {buttonPresets} from './buttonPresets';
 
-export type ButtonPreset = 'primary' | 'outline';
+export type ButtonPreset = 'primary' | 'outline' | 'danger';
 
 interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;

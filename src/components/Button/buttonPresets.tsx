@@ -45,4 +45,18 @@ export const buttonPresets: Record<
       content: 'gray2',
     },
   },
+  danger: {
+    default: {
+      container: {
+        backgroundColor: 'redPastel',
+      },
+      content: 'primary',
+    },
+    disabled: {
+      container: {
+        backgroundColor: 'gray4',
+      },
+      content: 'gray2',
+    },
+  },
 };
