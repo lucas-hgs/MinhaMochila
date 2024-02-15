@@ -22,7 +22,7 @@ export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
   const {activity} = useActivityService();
 
   function renderActivityItem({item}: ListRenderItemInfo<Activity>) {
-    return <ScheduleActivity activity={item} />;
+    return <ScheduleActivity activity={item} key={item.id} />;
   }
 
   function renderNoteItem({item}: ListRenderItemInfo<Note>) {
