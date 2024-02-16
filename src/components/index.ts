@@ -12,3 +12,4 @@ export * from './TextInput/TextInput';
 export * from './TextInputNote/TextInputNote';
 export * from './ActivityBox/ActivityBox';
 export * from './Toast/Toast';
+export * from './Form/FormTextInput';
