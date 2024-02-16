@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 
 import {Activity, useActivityService} from '@services';
 
-import {Button, Screen, Text} from '@components';
+import {Button, Screen} from '@components';
 import {AppScreenProps} from '@routes';
 
+import {EditActivity} from './components/EditActivity';
 import {ReadActivity} from './components/ReadActivity';
 
 export function ActivityScreen({route}: AppScreenProps<'ActivityScreen'>) {
@@ -17,9 +18,21 @@ export function ActivityScreen({route}: AppScreenProps<'ActivityScreen'>) {
 
   return (
     <Screen canGoBack>
-      <ReadActivity actualActivity={actualActivity} />
-      <Button title="Editar Atividade" mt="s48" />
-      <Button title="Deletar Atividade" mt="s24" preset="danger" />
+      {edit === false ? (
+        <>
+          <ReadActivity actualActivity={actualActivity} />
+          <Button
+            title="Editar Atividade"
+            mt="s48"
+            onPress={() => setEdit(!edit)}
+          />
+          <Button title="Deletar Atividade" mt="s24" preset="danger" />
+        </>
+      ) : (
+        <>
+          <EditActivity actualActivity={actualActivity} />
+        </>
+      )}
     </Screen>
   );
 }
