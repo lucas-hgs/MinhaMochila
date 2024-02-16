@@ -6,4 +6,12 @@ function formatDate(date: any) {
     formatedTime: format(date, 'HH:mm'),
   };
 }
-export const dateUtils = {formatDate};
+
+function formatDateToISO(date: any) {
+  let day = date.split('/')[0];
+  let month = date.split('/')[1];
+  let year = date.split('/')[2];
+
+  return year + '-' + ('0' + month).slice(-2) + '-' + ('0' + day).slice(-2);
+}
+export const dateUtils = {formatDate, formatDateToISO};
