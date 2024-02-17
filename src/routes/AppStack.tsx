@@ -8,6 +8,7 @@ import {
   NewActivityScreen,
   CreationScreen,
   ActivityScreen,
+  NoteScreen,
 } from '@screens';
 
 import {AppTabBottomTabParamList, AppTabNavigator} from './AppTabNavigator';
@@ -19,6 +20,9 @@ export type AppStackParamList = {
   NewActivityScreen: undefined;
   CreationScreen: undefined;
   ActivityScreen: {
+    id: string;
+  };
+  NoteScreen: {
     id: string;
   };
 };
@@ -35,6 +39,7 @@ export function AppStack() {
       <Stack.Screen name="NewActivityScreen" component={NewActivityScreen} />
       <Stack.Screen name="CreationScreen" component={CreationScreen} />
       <Stack.Screen name="ActivityScreen" component={ActivityScreen} />
+      <Stack.Screen name="NoteScreen" component={NoteScreen} />
     </Stack.Navigator>
   );
 }

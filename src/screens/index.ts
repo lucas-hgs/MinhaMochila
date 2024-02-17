@@ -4,3 +4,4 @@ export * from './app/NewActivityScreen/NewActivityScreen';
 export * from './app/CreationScreen/CreationScreen';
 export * from './app/ArchivesScreen/ArchivesScreen';
 export * from './app/ActivityScreen/ActivityScreen';
+export * from './app/NoteScreen/NoteScreen';
