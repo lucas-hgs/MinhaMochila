@@ -73,6 +73,7 @@ export function TextInputNote({
         </Animated.Text>
         <Box>
           <RNTextInput
+            onPressIn={focusInput}
             multiline
             ref={inputRef}
             onBlur={moveDown}
