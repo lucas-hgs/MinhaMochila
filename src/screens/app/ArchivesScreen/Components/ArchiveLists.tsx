@@ -1,21 +1,25 @@
 import React from 'react';
 import {FlatList, ListRenderItemInfo} from 'react-native';
 
-import {Activity, Note, activityListMock, noteListMock} from '@domain';
+import {Activity, Note} from '@domain';
+import {useActivityService, useNoteService} from '@services';
 
-import {ActivityBox, NoteBox, Text} from '@components';
+import {NoteBox, ScheduleActivity, Text} from '@components';
 
 interface Props {
   list: 'Activities' | 'Notes';
 }
 
 export function ArchiveLists({list}: Props) {
+  const {activity} = useActivityService();
+  const {note} = useNoteService();
+
   function renderActivityItem({item}: ListRenderItemInfo<Activity>) {
-    return <ActivityBox activity={item} />;
+    return <ScheduleActivity activity={item} key={item.id} />;
   }
 
   function renderNoteItem({item}: ListRenderItemInfo<Note>) {
-    return <NoteBox note={item} />;
+    return <NoteBox note={item} key={item.id} />;
   }
 
   return (
@@ -32,7 +36,7 @@ export function ArchiveLists({list}: Props) {
           </Text>
 
           <FlatList
-            data={activityListMock}
+            data={activity}
             keyExtractor={item => item.id.toString()}
             renderItem={renderActivityItem}
             showsVerticalScrollIndicator={false}
@@ -51,7 +55,7 @@ export function ArchiveLists({list}: Props) {
 
           <FlatList
             showsVerticalScrollIndicator={false}
-            data={noteListMock}
+            data={note}
             keyExtractor={item => item.id.toString()}
             renderItem={renderNoteItem}
           />
