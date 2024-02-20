@@ -15,7 +15,7 @@ export function ArchiveLists({list}: Props) {
   const {note} = useNoteService();
 
   function renderActivityItem({item}: ListRenderItemInfo<Activity>) {
-    return <ScheduleActivity activity={item} key={item.id} />;
+    return <ScheduleActivity activity={item} key={item.id} type="full" />;
   }
 
   function renderNoteItem({item}: ListRenderItemInfo<Note>) {
