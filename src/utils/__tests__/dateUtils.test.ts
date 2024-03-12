@@ -2,10 +2,18 @@ import {format} from 'date-fns';
 
 import {dateUtils} from '../dateUtils';
 
-const MOCKED_DATE = '1995-06-03';
+const MOCKED_DATE = new Date('1995-06-03').getTime();
 
 describe('dateUtils', () => {
   describe('formatDate', () => {
+    beforeAll(() => {
+      jest.spyOn(Date, 'now').mockImplementation(() => MOCKED_DATE);
+    });
+
+    afterAll(() => {
+      jest.clearAllMocks;
+    });
+
     it('should format date to dd/MM/yyyy', () => {
       const timeFormatted = format(MOCKED_DATE, 'dd/MM/yyyy');
 
