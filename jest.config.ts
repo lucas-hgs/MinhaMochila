@@ -7,6 +7,7 @@ const config: Config = {
   setupFilesAfterEnv: [
     '<rootDir>/node_modules/@testing-library/react-native/extend-expect',
   ],
+  moduleDirectories: ['node_modules', './src/test'],
 };
 
 export default config;
