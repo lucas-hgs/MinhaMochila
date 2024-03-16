@@ -4,9 +4,8 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import {useNavigation} from '@react-navigation/native';
 import {noteStorage, useNoteService, useToastService} from '@services';
 import {useForm} from 'react-hook-form';
-import {ViewStyle} from 'react-native/types';
 
-import {Box, Button, FormTextInputNote, Screen, Text} from '@components';
+import {Box, Button, FormTextInputNote, Screen} from '@components';
 
 import {newNoteSchema, NewNoteSchema} from './newNoteSchema';
 
@@ -69,19 +68,6 @@ export function NewNoteScreen() {
               boxProps={{mt: 's32'}}
             />
           </Box>
-
-          <Box
-            mt="s24"
-            justifyContent="center"
-            alignItems="center"
-            style={{...$boxProps}}>
-            <Text color="gray2">Adicionar imagens</Text>
-            <Box mt="s8" style={{...$crossProps}}>
-              <Text preset="paragraphLarge" color="gray2">
-                +
-              </Text>
-            </Box>
-          </Box>
         </Box>
 
         <Button
@@ -96,21 +82,3 @@ export function NewNoteScreen() {
     </Screen>
   );
 }
-
-const $boxProps: ViewStyle = {
-  borderWidth: 2,
-  borderStyle: 'dashed',
-  borderColor: 'gray',
-  borderRadius: 16,
-  minHeight: 120,
-};
-
-const $crossProps: ViewStyle = {
-  borderWidth: 1,
-  borderStyle: 'dashed',
-  borderColor: 'gray',
-  borderRadius: 15,
-  height: 30,
-  width: 30,
-  alignItems: 'center',
-};
